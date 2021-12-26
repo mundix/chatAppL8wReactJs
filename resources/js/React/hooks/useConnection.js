@@ -10,7 +10,7 @@ const initialState = {
 };
 
 
-export const Connection = () => {
+export const useConnection = () => {
 
     const [data, setData] = useState(initialState);
 
