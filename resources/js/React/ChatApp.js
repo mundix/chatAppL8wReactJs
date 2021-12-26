@@ -1,13 +1,13 @@
 import axios from 'axios';
 import React, {useState, useEffect} from "react";
 import ReactDOM from 'react-dom';
-import {Connection} from "./hooks/Connection";
+import {useConnection} from "./hooks/useConnection";
 // import {ChatRoomItem} from "./Components/ChatRoomItem";
 // import {ChatItem} from "./Components/ChatItem";
 
 export const ChatApp = () => {
 
-    const conn = Connection();
+    const conn = useConnection();
     const [chatRooms, setChatRooms] = useState([]);
     const [showChats, setShowChats] = useState(false);
     const [chats, setChats] = useState([]);
