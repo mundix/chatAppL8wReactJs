@@ -1,11 +1,13 @@
 import axios from 'axios';
 import React, {useState, useEffect} from "react";
 import ReactDOM from 'react-dom';
+import {connect} from "./hooks/Connection";
 // import {ChatRoomItem} from "./Components/ChatRoomItem";
 // import {ChatItem} from "./Components/ChatItem";
 
 export const ChatApp = () => {
 
+    const conn = connect();
     const [chatRooms, setChatRooms] = useState([]);
     const [showChats, setShowChats] = useState(false);
     const [chats, setChats] = useState([]);
@@ -32,7 +34,13 @@ export const ChatApp = () => {
     }
 
     useEffect(() => {
-        getRooms();
+        // getRooms();
+        // axios.get('/oauth/clients')
+        //     .then(response => {
+        //         console.log(response.data);
+        //     });
+
+        conn();
     }, []);
 
     return (
